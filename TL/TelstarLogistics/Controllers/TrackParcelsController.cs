@@ -14,15 +14,12 @@ namespace TelstarLogistics.Controllers
     public class TrackParcelsController : ApiController
     {
         private readonly ITrackParcelService _trackParcelService;
-        //TODO: change to request?
-        private Order order;
 
         public TrackParcelsController(ITrackParcelService trackParcelService)
         {
             _trackParcelService = trackParcelService;
         }
 
-        //Get order list
         [HttpGet]
         public List<Order> GetOrderList()
         {
