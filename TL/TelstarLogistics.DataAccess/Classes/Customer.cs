@@ -11,7 +11,7 @@ namespace TelstarLogistics.DataAccess.Classes
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string Mail { get; set; }
-        public Address Address { get;set}
+        public Address Address { get; set; }
         public int PostCode { get; set;}
         public string CardHolder { get; set; }
         public int CreditCard { get; set; }
