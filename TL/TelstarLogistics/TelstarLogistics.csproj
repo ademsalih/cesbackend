@@ -121,9 +121,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\TrackParcelsController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExternalSystemsService.cs" />
+    <Compile Include="Requests\StatusRequest.cs" />
+    <Compile Include="Services\ITrackParcelService.cs" />
+    <Compile Include="Services\TrackParcelService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +140,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TelstarLogistics.DataAccess\TelstarLogistics.DataAccess.csproj">
+      <Project>{524FD588-8B30-44CA-A6D5-9781E8626346}</Project>
+      <Name>TelstarLogistics.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

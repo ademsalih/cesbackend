@@ -82,6 +82,8 @@
     <Compile Include="Entities\Parcel.cs" />
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\RouteSegment.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Enum\City.cs" />
     <Compile Include="Enum\Type.cs" />
     <Compile Include="Migrations\202110141048508_tls.cs" />
     <Compile Include="Migrations\202110141048508_tls.Designer.cs">

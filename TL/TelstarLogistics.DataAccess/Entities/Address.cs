@@ -4,14 +4,14 @@ using TelstarLogistics.DataAccess.Enum;
 
 namespace TelstarLogistics.DataAccess.Classes
 {
-    public class RouteSegment
+    public class Address
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RouteSegmentId { get; set; }
-        public City CityTo { get; set; }
-        public City CityFrom { get; set; }
-        public double Price { get; set; }
-        public double Duration { get; set; }
+        public int AddressId { get; set; }
+        public string AddressLine { get; set; }
+        public int PostCode { get; set; }
+        public City City { get; set; }
+        public string Country { get; set; }
     }
 }
