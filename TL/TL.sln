@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelstarLogistics", "TelstarLogistics\TelstarLogistics.csproj", "{A3DB6A8F-5C64-4E7B-A5ED-7CDC9A771060}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelstarLogistics.DataAccess", "TelstarLogistics.DataAccess\TelstarLogistics.DataAccess.csproj", "{524FD588-8B30-44CA-A6D5-9781E8626346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLAPI", "TLAPI\TLAPI.csproj", "{258860F8-A149-49CD-9C74-B6720994BCDA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{524FD588-8B30-44CA-A6D5-9781E8626346} = {524FD588-8B30-44CA-A6D5-9781E8626346}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelstarLogistics.DataAccess", "TelstarLogistics.DataAccess\TelstarLogistics.DataAccess.csproj", "{524FD588-8B30-44CA-A6D5-9781E8626346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,14 +16,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3DB6A8F-5C64-4E7B-A5ED-7CDC9A771060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3DB6A8F-5C64-4E7B-A5ED-7CDC9A771060}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3DB6A8F-5C64-4E7B-A5ED-7CDC9A771060}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3DB6A8F-5C64-4E7B-A5ED-7CDC9A771060}.Release|Any CPU.Build.0 = Release|Any CPU
 		{524FD588-8B30-44CA-A6D5-9781E8626346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{524FD588-8B30-44CA-A6D5-9781E8626346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{524FD588-8B30-44CA-A6D5-9781E8626346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{524FD588-8B30-44CA-A6D5-9781E8626346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258860F8-A149-49CD-9C74-B6720994BCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258860F8-A149-49CD-9C74-B6720994BCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258860F8-A149-49CD-9C74-B6720994BCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258860F8-A149-49CD-9C74-B6720994BCDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

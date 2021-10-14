@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Reflection;
-using TelstarLogistics.DAL.Classes;
+using TelstarLogistics.DataAccess.Classes;
 
-namespace TelstarLogistics.DAL
+namespace TelstarLogistics.DataAccess
 {
     public class TelstarLogisticsContext : DbContext 
     {
         public DbSet<Employee> Persons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Parcel> Parcels { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<RouteSegment> RouteSegments { get; set; }
+
+
         private readonly Stack<ValueTuple<string, IEnumerable<SqlParameter>>> _sqlCommands = new Stack<ValueTuple<string, IEnumerable<SqlParameter>>>();
 
         public TelstarLogisticsContext() : base("name=TLDB")
@@ -31,6 +38,6 @@ namespace TelstarLogistics.DAL
 
             base.OnModelCreating(modelBuilder);
         }
-        
+
     }
 }

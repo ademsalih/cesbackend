@@ -1,0 +1,40 @@
+﻿namespace TelstarLogistics.DataAccess.Enum
+{
+    public enum City
+    {
+        None,
+        tanger,
+        tunis,
+        dkø,
+        tripoli,
+        cairo,
+        makkaresh,
+        sahara,
+        omdurman,
+        dakar,
+        timbuktu,
+        wadai,
+        suaken,
+        kapg,
+        addisabeba,
+        darfur,
+        sierraleone,
+        guldkysten,
+        slavekysten,
+        bahrelghazal,
+        victoriasøen,
+        zanzibar,
+        congo,
+        kabalo,
+        luanda,
+        sthelena,
+        mocambique,
+        tamatave,
+        victoriafaldene,
+        hvalbugten,
+        dragebjerget,
+        kapstmarie,
+        kapstaden
+
+    }
+}
