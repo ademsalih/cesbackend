@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Reflection;
-using TelstarLogistics.DAL.Classes;
 using TelstarLogistics.DataAccess.Classes;
 
 namespace TelstarLogistics.DataAccess
