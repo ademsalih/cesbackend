@@ -6,7 +6,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
+using TelstarLogistics.DAL;
+using TelstarLogistics.DAL.Classes;
 using TelstarLogistics.Models;
+using TLAPI.Services;
 
 //using TelstarLogistics.Models;
 //using TelstarLogistics.Services;
@@ -24,9 +27,17 @@ namespace TelstarLogistics.Controllers
         //}
 
         // GET api/<controller>/5
-        public string Get(int id)
+        [Route("createEmployee")]
+        public string CreateEmployee(string name,string password)
         {
-            return id.ToString();
+            RoutesService rs = new RoutesService();
+            rs.addCustomer(name,password);
+            using (var db = new TelstarLogisticsContext())
+            {
+              var person=  db.Persons.FirstOrDefault(x => x.Name.Equals(name));
+              return person.Name;
+            }
+
 
         }
 
