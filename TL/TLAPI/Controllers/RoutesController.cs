@@ -7,7 +7,9 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using TelstarLogistics.DataAccess;
+using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Models;
+using TelstarLogistics.Services;
 using TLAPI.Services;
 
 //using TelstarLogistics.Models;
@@ -15,32 +17,29 @@ using TLAPI.Services;
 
 namespace TelstarLogistics.Controllers
 {
-    [RoutePrefix("v1/Routes")]
+    [RoutePrefix("routes")]
     public class RoutesController : ApiController
     {
-        // GET api/<controller>/get
-        //public string GetIt()
-        //{
-        //   var data= ess.getRoutes("http://wa-tl-t1.azurewebsites.net/api/routes");
-        //   return data;
-        //}
+        private readonly IRoutesService _routesService;
+        public RoutesController()
+        {
+            TelstarLogisticsContext dbContext = new TelstarLogisticsContext();
+            _routesService = new RoutesService(dbContext);
 
-        // GET api/<controller>/5
+        }
+
         [Route("createEmployee")]
         public string CreateEmployee(string name,string password)
         {
-            RoutesService rs = new RoutesService();
-            rs.addCustomer(name,password);
+            ExternalSystemsService externalSystemsService = new ExternalSystemsService();
+            //rs.addCustomer(name,password);
             using (var db = new TelstarLogisticsContext())
             {
               var person=  db.Persons.FirstOrDefault(x => x.Name.Equals(name));
               return person.Name;
             }
-
-
         }
 
-        // GET api/<controller>/
         [Route("findRoutes")]
         public FindRouteResponse Route(FindRouteRequest request)
         {
@@ -50,34 +49,54 @@ namespace TelstarLogistics.Controllers
                 Time =11.3,
                 CityTo = request.CityTo,
                 CityFrom = request.CityFrom
-
             };
-
         }
 
-        [Route("details")]
-        [HttpGet()]
-        public string Details(int id, string backendOnly)
+        [Route("findCheapestRoute")]
+        public FindRouteResponse CheapestRoute(FindRouteRequest request)
+        {
+            return new FindRouteResponse
+            {
+                Cost = 20.2,
+                Time = 15.3,
+                CityTo = request.CityTo,
+                CityFrom = request.CityFrom
+            };
+        }
+
+        [Route("findShortestRoute")]
+        public FindRouteResponse ShortestRoute(FindRouteRequest request)
+        {
+            return new FindRouteResponse
+            {
+                Cost = 45.2,
+                Time = 11.3,
+                CityTo = request.CityTo,
+                CityFrom = request.CityFrom
+            };
+        }
+
+        [Route("order")]
+        [HttpPost]
+        public string PlaceOrder(int id, string backendOnly)
         {
             return $@"{id}{backendOnly}";
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [Route("getCities")]
+        public List<City> GetCities()
         {
+            var cities = _routesService.GetCities();
+
+            return cities;
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //[Route("getCities")]
+        //public FindRouteResponse GetAirRoute()
+        //{
+        //    var response = externalSystemsService.getAirRoutes();
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
-
-
-       
+        //    return response;
+        //}
     }
 }

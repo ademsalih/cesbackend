@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Services;
 using TLAPI.Models;
@@ -15,9 +16,10 @@ namespace TLAPI.Controllers
     {
         private readonly ITrackParcelService _trackParcelService;
 
-        public TrackParcelsController(ITrackParcelService trackParcelService)
+        public TrackParcelsController()
         {
-            _trackParcelService = trackParcelService;
+            TelstarLogisticsContext dbContext = new TelstarLogisticsContext();
+            _trackParcelService = new TrackParcelService(dbContext);
         }
 
         [HttpGet]

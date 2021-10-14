@@ -7,7 +7,6 @@ namespace TLAPI.Services
     public interface ITrackParcelService
     {
         List<Order> GetOrderList();
-
         Order UpdateStatus(StatusRequest request);
     }
 }

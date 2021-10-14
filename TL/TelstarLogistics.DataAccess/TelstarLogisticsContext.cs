@@ -17,6 +17,7 @@ namespace TelstarLogistics.DataAccess
         public DbSet<Order> Orders { get; set; }
         public DbSet<Parcel> Parcels { get; set; }
         public DbSet<Route> Routes { get; set; }
+        public DbSet<City> Cities { get; set; }
         public DbSet<RouteSegment> RouteSegments { get; set; }
 
 

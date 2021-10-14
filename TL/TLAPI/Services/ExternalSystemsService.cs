@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using TelstarLogistics.Models;
 
 namespace TelstarLogistics.Services
 {
     public class ExternalSystemsService
     {
         public const string DATA = @"";
-        public string getRoutes(string baseUrl)
+        public string getAirRoutes(string baseUrl, FindRouteRequest findRouteRequest)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(baseUrl);
             request.Method = "GET";
