@@ -5,13 +5,8 @@ using System.Web;
 
 namespace TLAPI.Services
 {
-    public class OrderService
+    public interface IOrderService
     {
-        public void SaveOrder()
-        {
-
-        }
-
-        
+        void SaveOrder();
     }
 }

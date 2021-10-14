@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using TelstarLogistics.DataAccess;
+using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Models;
 using TLAPI.Services;
 
@@ -18,6 +19,12 @@ namespace TelstarLogistics.Controllers
     [RoutePrefix("routes")]
     public class RoutesController : ApiController
     {
+        private RoutesService routesService;
+        RoutesController()
+        {
+            RoutesService routesService = new RoutesService();
+        }
+
         [Route("createEmployee")]
         public string CreateEmployee(string name,string password)
         {
@@ -73,5 +80,12 @@ namespace TelstarLogistics.Controllers
             return $@"{id}{backendOnly}";
         }
 
+        [Route("getCities")]
+        public List<City> GetCities()
+        {
+            var cities = routesService.GetCities();
+
+            return cities;
+        }
     }
 }

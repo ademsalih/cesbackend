@@ -23,5 +23,15 @@ namespace TLAPI.Services
                 db.SaveChanges();
             }
         }
+
+        public List<City> GetCities()
+        {
+            using (var db = new TelstarLogisticsContext())
+            {
+                var cities = db.Cities.ToList();
+
+                return cities;
+            }
+        }
     }
 }
