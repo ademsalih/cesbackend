@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using TelstarLogistics.DataAccess;
-using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.DataAccess.Entities;
 using TLAPI.Models;
 
@@ -42,5 +41,28 @@ namespace TLAPI.Services
             return customerList.First(list => list.PersonId == request);
         }
 
+        public Customer CreateCustomerId(CreateLoginRequest request)
+        {
+            var newCustomer = new Customer()
+            {
+                PersonId = new int(),
+                Name = request.Name,
+                Address = new Address()
+                {
+                    AddressId = new int(),
+                    AddressLine = request.AddressLine,
+                    City = request.City,
+                    Country = request.Country,
+                    PostCode = request.PostCode
+                },
+                Mail = request.Mail,
+                CardHolder = request.CardHolder,
+                CreditCard = request.CreditCard,
+                Cvv = request.Cvv,
+                DateTime = request.DateTime
+            };
+
+            return newCustomer;
+        }
     }
 }

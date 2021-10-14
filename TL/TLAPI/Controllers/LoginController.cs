@@ -1,7 +1,6 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Web.Http;
-using TelstarLogistics.DataAccess.Classes;
+using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Entities;
 using TLAPI.Models;
 using TLAPI.Services;
@@ -9,15 +8,17 @@ using TLAPI.Services;
 namespace TLAPI.Controllers
 {
     /// <summary>
-    /// This controller exposes the endpoint for retrieving log in data <see cref="LoginService"/>.
+    /// This controller exposes the endpoint for retrieving employee
+    /// and customer information <see cref="LoginService"/>.
     /// </summary>
     public class LoginController : ApiController
     {
         private readonly ILogin _iLogin;
         
-        public LoginController(ILogin iLogin)
+        public LoginController()
         {
-            _iLogin = iLogin;
+            TelstarLogisticsContext dbContext = new TelstarLogisticsContext();
+            _iLogin = new LoginService(dbContext);
         }
 
         [HttpPost]
@@ -34,6 +35,12 @@ namespace TLAPI.Controllers
         public Customer GetCustomerInformation(int request)
         {
             return _iLogin.GetCustomerId(request);
+        }
+
+        [HttpGet]
+        public Customer CreateCustomerId(CreateLoginRequest request)
+        {
+            return _iLogin.CreateCustomerId(request);
         }
 
     }

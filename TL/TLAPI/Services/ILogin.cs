@@ -8,5 +8,7 @@ namespace TLAPI.Services
         bool GetEmployeeLogin(GetEmployeeLoginRequest request);
 
         Customer GetCustomerId(int request);
+
+        Customer CreateCustomerId(CreateLoginRequest request);
     }
 }
