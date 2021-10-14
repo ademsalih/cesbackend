@@ -3,6 +3,7 @@ using System.Linq;
 using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Requests;
+using TLAPI.Services;
 
 namespace TelstarLogistics.Services{
     /// <summary>

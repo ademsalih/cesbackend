@@ -9,6 +9,7 @@ using System.Web.Http;
 using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Models;
+using TelstarLogistics.Services;
 using TLAPI.Services;
 
 //using TelstarLogistics.Models;
@@ -19,17 +20,19 @@ namespace TelstarLogistics.Controllers
     [RoutePrefix("routes")]
     public class RoutesController : ApiController
     {
-        private RoutesService routesService;
-        RoutesController()
+        private readonly IRoutesService _routesService;
+        public RoutesController()
         {
-            RoutesService routesService = new RoutesService();
+            TelstarLogisticsContext dbContext = new TelstarLogisticsContext();
+            _routesService = new RoutesService(dbContext);
+
         }
 
         [Route("createEmployee")]
         public string CreateEmployee(string name,string password)
         {
-            RoutesService rs = new RoutesService();
-            rs.addCustomer(name,password);
+            ExternalSystemsService externalSystemsService = new ExternalSystemsService();
+            //rs.addCustomer(name,password);
             using (var db = new TelstarLogisticsContext())
             {
               var person=  db.Persons.FirstOrDefault(x => x.Name.Equals(name));
@@ -83,9 +86,17 @@ namespace TelstarLogistics.Controllers
         [Route("getCities")]
         public List<City> GetCities()
         {
-            var cities = routesService.GetCities();
+            var cities = _routesService.GetCities();
 
             return cities;
         }
+
+        //[Route("getCities")]
+        //public FindRouteResponse GetAirRoute()
+        //{
+        //    var response = externalSystemsService.getAirRoutes();
+
+        //    return response;
+        //}
     }
 }

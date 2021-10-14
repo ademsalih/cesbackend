@@ -7,31 +7,22 @@ using TelstarLogistics.DataAccess.Classes;
 
 namespace TLAPI.Services
 {
-    public class RoutesService
+    public class RoutesService : IRoutesService
     {
+        private readonly TelstarLogisticsContext _dbContext;
 
-        public void addCustomer(string name, string password)
+        public RoutesService(TelstarLogisticsContext dbContext)
         {
-            using (var db = new TelstarLogisticsContext())
-            {
-                db.Persons.Add(new Employee
-                {
-                    Name= name,
-                    Password = password
-                });
-
-                db.SaveChanges();
-            }
+            _dbContext = dbContext;
         }
 
         public List<City> GetCities()
         {
-            using (var db = new TelstarLogisticsContext())
-            {
-                var cities = db.Cities.ToList();
+            
+            var cities = _dbContext.Cities.ToList();
 
-                return cities;
-            }
+            return cities;
+            
         }
     }
 }

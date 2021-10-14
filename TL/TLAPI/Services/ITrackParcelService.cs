@@ -2,12 +2,11 @@
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Requests;
 
-namespace TelstarLogistics.Services
+namespace TLAPI.Services
 {
     public interface ITrackParcelService
     {
         List<Order> GetOrderList();
-
         Order UpdateStatus(StatusRequest request);
     }
 }
