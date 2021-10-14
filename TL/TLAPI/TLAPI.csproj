@@ -178,11 +178,14 @@
     </Compile>
     <Compile Include="Models\FindRouteRequest.cs" />
     <Compile Include="Models\FindRouteResponse.cs" />
+    <Compile Include="Models\MakeAnOrderRequest.cs" />
+    <Compile Include="Models\MakeAnOrderResponse.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Models\StatusRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExternalSystemsService.cs" />
     <Compile Include="Services\ITrackParcelService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\RoutesService.cs" />
     <Compile Include="Services\TrackParcelService.cs" />
   </ItemGroup>
