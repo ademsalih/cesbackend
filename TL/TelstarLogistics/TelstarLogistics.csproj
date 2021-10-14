@@ -108,8 +108,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\TrackParcelsController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\StatusRequest.cs" />
+    <Compile Include="Services\ITrackParcelService.cs" />
     <Compile Include="Services\TrackParcelService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -130,6 +133,7 @@
       <Name>TelstarLogistics.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
