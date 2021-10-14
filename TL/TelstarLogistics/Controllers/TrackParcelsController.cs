@@ -23,23 +23,12 @@ namespace TelstarLogistics.Controllers
         [HttpGet]
         public List<Order> GetOrderList()
         {
-            if (ModelState.IsValid)
-            {
-                return _trackParcelService.GetOrderList();
-            }
-
-            throw new ArgumentException("The input request is not valid");
+            return _trackParcelService.GetOrderList();
         }
 
         [HttpPatch]
         public Order UpdateOrder(StatusRequest request)
         {
-
-            if (!ModelState.IsValid)
-            {
-                throw new ArgumentException("The input request is not valid.");
-            }
-
             return _trackParcelService.UpdateStatus(request);
         }
 
