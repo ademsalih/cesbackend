@@ -186,6 +186,7 @@
     <Compile Include="Services\ExternalSystemsService.cs" />
     <Compile Include="Services\ITrackParcelService.cs" />
     <Compile Include="Services\OrderService.cs" />
+    <Compile Include="Services\PathFinder.cs" />
     <Compile Include="Services\RoutesService.cs" />
     <Compile Include="Services\TrackParcelService.cs" />
   </ItemGroup>
@@ -241,6 +242,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Services\distances.csv" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
