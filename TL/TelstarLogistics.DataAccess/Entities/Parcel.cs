@@ -11,6 +11,8 @@ namespace TelstarLogistics.DataAccess.Classes
         public int ParcelId { get; set; }
         public Type Type { get; set; }
         public double Weight { get; set; }
-        public double Size { get; set; }
+        public double SizeLength { get; set; }
+        public double SizeWidth { get; set; }
+        public double SizeHeight { get; set; }
     }
 }

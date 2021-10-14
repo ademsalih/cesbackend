@@ -18,9 +18,18 @@ namespace TelstarLogistics
                 defaults: new { id = System.Web.Http.RouteParameter.Optional }
             );
 
+            config.Routes.MapHttpRoute(
+                name: "findRoutes",
+                routeTemplate: "api/{controller}/findRoutes",
+                defaults: new { id = System.Web.Http.RouteParameter.Optional }
+            );
+
+           
+
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
+
 
             app.UseWebApi(config);
         }

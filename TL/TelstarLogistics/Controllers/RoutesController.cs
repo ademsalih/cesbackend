@@ -3,22 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.Owin.Logging;
+using TelstarLogistics.Models;
+using TelstarLogistics.Services;
 
 namespace TelstarLogistics.Controllers
 {
+    [RoutePrefix("v1/Routes")]
     public class RoutesController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        // GET api/<controller>/get
+        public string GetIt()
         {
-            return new string[] { "value1", "value2" };
+           ExternalSystemsService ess = new ExternalSystemsService();
+           var data= ess.getRoutes("http://wa-tl-t1.azurewebsites.net/api/routes");
+           return data;
         }
 
         // GET api/<controller>/5
         public string Get(int id)
         {
-            return "value";
+            return id.ToString();
+
+        }
+
+        // GET api/<controller>/
+        [Route("findRoutes")]
+        [HttpGet()]
+        public FindRouteResponse GetRoute([FromBody]FindRouteRequest request)
+        {
+            return new FindRouteResponse
+            {
+                Cost = 45.2,
+                Time =11.3,
+                CityTo = request.CityTo,
+                CityFrom = request.CityFrom
+
+            };
+
+        }
+
+        [Route("details")]
+        [HttpGet()]
+        public string Details(int id, string backendOnly)
+        {
+            return $@"{id}{backendOnly}";
         }
 
         // POST api/<controller>
@@ -35,5 +67,8 @@ namespace TelstarLogistics.Controllers
         public void Delete(int id)
         {
         }
+
+
+       
     }
 }
