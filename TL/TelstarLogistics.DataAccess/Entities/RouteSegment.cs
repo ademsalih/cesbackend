@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using TelstarLogistics.DataAccess.Enum;
 
-namespace TelstarLogistics.DataAccess.Classes
+namespace TelstarLogistics.DataAccess.Entities
 {
     public class RouteSegment
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using TelstarLogistics.DataAccess.Classes;
-using TelstarLogistics.Requests;
+using TLAPI.Models;
 
 namespace TLAPI.Services
 {

@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Reflection;
 using TelstarLogistics.DataAccess.Classes;
+using TelstarLogistics.DataAccess.Entities;
 
 namespace TelstarLogistics.DataAccess
 {

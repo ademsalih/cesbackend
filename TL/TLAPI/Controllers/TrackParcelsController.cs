@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
-using TelstarLogistics.Requests;
 using TelstarLogistics.Services;
+using TLAPI.Models;
 using TLAPI.Services;
 
-namespace TelstarLogistics.Controllers
+namespace TLAPI.Controllers
 {
     /// <summary>
     /// This controller exposes the endpoint for retrieving the list of parcels and their
