@@ -29,7 +29,7 @@ namespace TelstarLogistics.Services{
                 .First(o => o.OrderId == request.OrderId);
 
             //Update status
-            if (request.DeliveryStatus)
+            if (request.Delivered)
             {
                 request.ShippingStatus = true;
                 order.Delivered = true;
