@@ -54,7 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\Parcel.cs" />
+    <Compile Include="Classes\Route.cs" />
+    <Compile Include="Classes\RouteSegment.cs" />
+    <Compile Include="Enum\Type.cs" />
     <Compile Include="Migrations\202110141048508_tls.cs" />
     <Compile Include="Migrations\202110141048508_tls.Designer.cs">
       <DependentUpon>202110141048508_tls.cs</DependentUpon>
