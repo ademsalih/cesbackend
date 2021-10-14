@@ -11,7 +11,7 @@ namespace TelstarLogistics.DataAccess.Classes
         public int AddressId { get; set; }
         public string AddressLine { get; set; }
         public int PostCode { get; set; }
-        public City City { get; set; }
+        public string City { get; set; }
         public string Country { get; set; }
     }
 }

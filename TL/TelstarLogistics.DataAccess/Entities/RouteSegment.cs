@@ -9,8 +9,8 @@ namespace TelstarLogistics.DataAccess.Classes
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RouteSegmentId { get; set; }
-        public City CityTo { get; set; }
-        public City CityFrom { get; set; }
+        public string CityTo { get; set; }
+        public string CityFrom { get; set; }
         public double Price { get; set; }
         public double Duration { get; set; }
     }

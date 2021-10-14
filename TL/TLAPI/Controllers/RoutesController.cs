@@ -6,8 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
-using TelstarLogistics.DAL;
-using TelstarLogistics.DAL.Classes;
+using TelstarLogistics.DataAccess;
 using TelstarLogistics.Models;
 using TLAPI.Services;
 

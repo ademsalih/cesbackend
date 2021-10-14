@@ -9,6 +9,7 @@ namespace TelstarLogistics.DataAccess.Classes
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string MailAddress { get; set; }
+        public string Name { get; set; }
         public string Password { get; set; }
     }
 }
