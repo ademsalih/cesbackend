@@ -1,4 +1,4 @@
-﻿
+﻿using TelstarLogistics.DataAccess.Entities;
 using TLAPI.Models;
 
 namespace TLAPI.Services
@@ -7,6 +7,6 @@ namespace TLAPI.Services
     {
         bool GetEmployeeLogin(GetEmployeeLoginRequest request);
 
-        bool GetCustomerId(int request);
+        Customer GetCustomerId(int request);
     }
 }

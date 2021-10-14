@@ -1,11 +1,15 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Net;
+using System.Web.Http;
+using TelstarLogistics.DataAccess.Classes;
+using TelstarLogistics.DataAccess.Entities;
 using TLAPI.Models;
 using TLAPI.Services;
 
 namespace TLAPI.Controllers
 {
     /// <summary>
-    /// This controller exposes the endpoint for retrieving log in data <see cref="Login"/>.
+    /// This controller exposes the endpoint for retrieving log in data <see cref="LoginService"/>.
     /// </summary>
     public class LoginController : ApiController
     {
@@ -16,14 +20,18 @@ namespace TLAPI.Controllers
             _iLogin = iLogin;
         }
 
-        [HttpGet]
-        public bool GetEmployeeLogin(GetEmployeeLoginRequest request)
+        [HttpPost]
+        public void GetEmployeeLogin(GetEmployeeLoginRequest request)
         {
-            return _iLogin.GetEmployeeLogin(request);
+            if(_iLogin.GetEmployeeLogin(request))
+            {
+                return;
+            }
+            throw new HttpResponseException(HttpStatusCode.Unauthorized);
         }
 
         [HttpGet]
-        public bool GetCustomerInformation(int request)
+        public Customer GetCustomerInformation(int request)
         {
             return _iLogin.GetCustomerId(request);
         }

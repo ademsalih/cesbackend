@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TelstarLogistics.DataAccess.Classes
+namespace TelstarLogistics.DataAccess.Entities
 {
     public class Customer
     {
