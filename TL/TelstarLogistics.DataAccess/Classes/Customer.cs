@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
- 
-namespace TelstarLogistics.DAL.Classes
+
+namespace TelstarLogistics.DataAccess.Classes
 {
-    public class Employee
+    public class Customer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
+        public string Mail { get; set; }
     }
 }
