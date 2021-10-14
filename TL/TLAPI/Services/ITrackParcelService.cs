@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using TelstarLogistics.DataAccess.Classes;
-using TelstarLogistics.Requests;
+using TLAPI.Models;
 
-namespace TelstarLogistics.Services
+namespace TLAPI.Services
 {
     public interface ITrackParcelService
     {

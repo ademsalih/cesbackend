@@ -2,9 +2,10 @@
 using System.Linq;
 using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
-using TelstarLogistics.Requests;
+using TelstarLogistics.Services;
+using TLAPI.Models;
 
-namespace TelstarLogistics.Services{
+namespace TLAPI.Services{
     /// <summary>
     /// Purpose: generate list of orders made with current delivery status and
     /// update delivery status.

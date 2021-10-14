@@ -169,6 +169,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
     <Compile Include="Controllers\TrackParcelsController.cs" />
@@ -176,13 +177,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CreateLoginRequest.cs" />
     <Compile Include="Models\FindRouteRequest.cs" />
     <Compile Include="Models\FindRouteResponse.cs" />
+    <Compile Include="Models\GetEmployeeLoginRequest.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Models\StatusRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Login.cs" />
     <Compile Include="Services\ExternalSystemsService.cs" />
     <Compile Include="Services\ITrackParcelService.cs" />
+    <Compile Include="Services\ILogin.cs" />
     <Compile Include="Services\RoutesService.cs" />
     <Compile Include="Services\TrackParcelService.cs" />
   </ItemGroup>
