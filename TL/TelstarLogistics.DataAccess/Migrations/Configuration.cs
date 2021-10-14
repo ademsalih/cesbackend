@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TelstarLogistics.DAL.TelstarLogisticsContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TelstarLogisticsContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(TelstarLogistics.DAL.TelstarLogisticsContext context)
+        protected override void Seed(TelstarLogisticsContext context)
         {
             //  This method will be called after migrating to the latest version.
 

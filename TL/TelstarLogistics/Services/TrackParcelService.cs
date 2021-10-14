@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Requests;
 
@@ -11,20 +13,27 @@ namespace TelstarLogistics.Services{
 
     public class TrackParcelService : ITrackParcelService
     {
+        private readonly TelstarLogisticsContext _dbContext;
+
+        public TrackParcelService(TelstarLogisticsContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public List<Order> GetOrderList()
         {
             //Get updated order list
-            //TODO: retrieve list from database
-            var updatedList = new List<Order>();
+            var orderList = _dbContext.Orders.ToList();
           
-            return updatedList;
+            return orderList;
         }
 
         public Order UpdateStatus(StatusRequest request)
         {
-            //TODO: Fetch order from database from request Id
-            var orderDatabase = new List<Order>();
+            //Retrieve orders from database
+            var orderDatabase = _dbContext.Orders.ToList();
 
+            //Retrieve order with same order id as the order id from request
             var order = orderDatabase
                 .First(o => o.OrderId == request.OrderId);
 
@@ -34,6 +43,8 @@ namespace TelstarLogistics.Services{
                 request.ShippingStatus = true;
                 order.Delivered = true;
                 order.ShippingStatus = true;
+
+                _dbContext.SaveChanges();
             }
 
             return order;
