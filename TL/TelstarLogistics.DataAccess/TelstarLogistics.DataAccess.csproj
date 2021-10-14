@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\City.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
