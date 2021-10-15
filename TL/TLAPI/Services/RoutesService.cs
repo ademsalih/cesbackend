@@ -56,7 +56,6 @@ namespace TLAPI.Services
                 Cost = request.Price,
                 CustomerId = request.CustomerId,
                 Duration = request.Duration,
-                RouteSegmentId = request.RouteSegmentId,
                 ShippingStatus = true
             };
 
