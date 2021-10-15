@@ -111,6 +111,14 @@
     <Compile Include="Migrations\202110150304029_modify_address.designer.cs">
       <DependentUpon>202110150304029_modify_address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110150417453_changeToIds.cs" />
+    <Compile Include="Migrations\202110150417453_changeToIds.designer.cs">
+      <DependentUpon>202110150417453_changeToIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110150421000_segmentId.cs" />
+    <Compile Include="Migrations\202110150421000_segmentId.designer.cs">
+      <DependentUpon>202110150421000_segmentId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelstarLogisticsContext.cs" />
@@ -140,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110150304029_modify_address.resx">
       <DependentUpon>202110150304029_modify_address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110150417453_changeToIds.resx">
+      <DependentUpon>202110150417453_changeToIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110150421000_segmentId.resx">
+      <DependentUpon>202110150421000_segmentId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

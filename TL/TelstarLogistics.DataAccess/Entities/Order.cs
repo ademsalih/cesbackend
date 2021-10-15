@@ -10,9 +10,10 @@ namespace TelstarLogistics.DataAccess.Classes
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
-        public Employee CreatedBy { get; set; }
-        public Customer Customer { get; set; }
-        public Parcel Parcel { get; set; }
+        public int CreatedById { get; set; }
+        public int CustomerId { get; set; }
+        public int RouteSegmentId { get; set; }
+        public int ParcelId { get; set; }
         public string CityFrom { get; set; }
         public string CityTo { get; set; }
         public double Cost { get; set; }

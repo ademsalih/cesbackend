@@ -54,9 +54,9 @@ namespace TLAPI.Services
                 CityFrom = request.CityFrom,
                 CityTo = request.CityTo,
                 Cost = request.Price,
-                Customer = request.Customer,
+                CustomerId = request.CustomerId,
                 Duration = request.Duration,
-                Parcel = request.Parcel,
+                RouteSegmentId = request.RouteSegmentId,
                 ShippingStatus = true
             };
 

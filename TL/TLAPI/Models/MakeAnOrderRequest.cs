@@ -6,9 +6,9 @@ namespace TLAPI.Models
 {
     public class MakeAnOrderRequest
     {
-        public Customer Customer { get; set; }
-        public Parcel Parcel { get; set; }
-        public RouteSegment Route { get; set; }
+        public int CustomerId { get; set; }
+        public int RouteSegmentId { get; set; }
+        public int EmployeeId { get; set; }
         public string CityFrom { get; set; }
         public string CityTo { get; set; }
         public double Price { get; set; }
