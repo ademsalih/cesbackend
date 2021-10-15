@@ -4,7 +4,6 @@ using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Services;
 using TLAPI.Models;
-using TelstarLogistics.Requests;
 using TLAPI.Services;
 
 namespace TLAPI.Services{

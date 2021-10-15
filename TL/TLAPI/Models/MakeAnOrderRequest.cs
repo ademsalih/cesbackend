@@ -1,4 +1,5 @@
 ﻿using TelstarLogistics.DataAccess.Classes;
+using TelstarLogistics.DataAccess.Entities;
 
 namespace TLAPI.Models
 {
