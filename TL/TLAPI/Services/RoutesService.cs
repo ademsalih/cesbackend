@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
+using TLAPI.Models;
 
 namespace TLAPI.Services
 {
@@ -46,6 +47,24 @@ namespace TLAPI.Services
 
         }
 
-        
+        public Order SaveOrder(MakeAnOrderRequest request)
+        {
+            var newOrder = new Order()
+            {
+                CityFrom = request.CityFrom,
+                CityTo = request.CityTo,
+                Cost = request.Price,
+                Customer = request.Customer,
+                Duration = request.Duration,
+                Parcel = request.Parcel,
+                ShippingStatus = true
+            };
+
+            _dbContext.Orders.Add(newOrder);
+
+            _dbContext.SaveChanges();
+            return newOrder;
+        }
+
     }
 }

@@ -79,10 +79,8 @@
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Parcel.cs" />
-    <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\RouteSegment.cs" />
     <Compile Include="Enum\Type.cs" />
     <Compile Include="Migrations\202110141048508_tls.cs" />
@@ -104,6 +102,14 @@
     <Compile Include="Migrations\202110150020399_something.cs" />
     <Compile Include="Migrations\202110150020399_something.designer.cs">
       <DependentUpon>202110150020399_something.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110150154490_orderAdjustment.cs" />
+    <Compile Include="Migrations\202110150154490_orderAdjustment.designer.cs">
+      <DependentUpon>202110150154490_orderAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110150304029_modify_address.cs" />
+    <Compile Include="Migrations\202110150304029_modify_address.designer.cs">
+      <DependentUpon>202110150304029_modify_address.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110150020399_something.resx">
       <DependentUpon>202110150020399_something.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110150154490_orderAdjustment.resx">
+      <DependentUpon>202110150154490_orderAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110150304029_modify_address.resx">
+      <DependentUpon>202110150304029_modify_address.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

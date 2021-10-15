@@ -2,7 +2,7 @@
 
 namespace TLAPI.Models
 {
-    public class CreateLoginRequest
+    public class CreateCustomerRequest
     {
         public string Name { get; set; }
         public string Mail { get; set; }

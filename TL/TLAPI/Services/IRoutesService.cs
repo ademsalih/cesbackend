@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TelstarLogistics.DataAccess.Classes;
+using TLAPI.Models;
 
 namespace TLAPI.Services
 {  
@@ -7,5 +8,6 @@ namespace TLAPI.Services
     {
         List<City> GetCities();
         void PopulateCities(string cities);
+        Order SaveOrder(MakeAnOrderRequest request);
     }
 }

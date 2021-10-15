@@ -10,6 +10,7 @@ using TelstarLogistics.DataAccess;
 using TelstarLogistics.DataAccess.Classes;
 using TelstarLogistics.Models;
 using TelstarLogistics.Services;
+using TLAPI.Models;
 using TLAPI.Services;
 
 //using TelstarLogistics.Models;
@@ -68,20 +69,24 @@ namespace TelstarLogistics.Controllers
         public FindRouteResponse ShortestRoute(FindRouteRequest request)
         {
             PathFinder pf = new PathFinder();
+            int distance = pf.GetDistance(pf.MapNameToId(request.CityFrom), pf.MapNameToId(request.CityTo));
+
+
             return new FindRouteResponse
             {
                 Cost = 45.2,
-                Time = 11.3,
+                Time = distance*4,
                 CityTo = request.CityTo,
                 CityFrom = request.CityFrom
             };
         }
 
-        [Route("order")]
+        [Route("postOrder")]
         [HttpPost]
-        public string PlaceOrder(int id, string backendOnly)
+        public Order PlaceOrder(MakeAnOrderRequest request)
         {
-            return $@"{id}{backendOnly}";
+
+            return _routesService.SaveOrder(request); ;
         }
 
         [Route("getCities")]

@@ -9,6 +9,6 @@ namespace TLAPI.Services
 
         Customer GetCustomerId(int request);
 
-        Customer CreateCustomerId(CreateLoginRequest request);
+        Customer CreateCustomerId(CreateCustomerRequest request);
     }
 }

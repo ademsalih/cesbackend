@@ -36,32 +36,28 @@ namespace TLAPI.Services
 
         public Customer GetCustomerId(int request)
         {
-            var customerList = _dbContext.Customers.ToList();
+            var customer = _dbContext.Customers.FirstOrDefault(list => list.PersonId == request);
 
-            return customerList.First(list => list.PersonId == request);
+            return customer;
         }
 
-        public Customer CreateCustomerId(CreateLoginRequest request)
+        public Customer CreateCustomerId(CreateCustomerRequest request)
         {
             var newCustomer = new Customer()
             {
-                PersonId = new int(),
+                
                 Name = request.Name,
-                Address = new Address()
-                {
-                    AddressId = new int(),
-                    AddressLine = request.AddressLine,
-                    City = request.City,
-                    Country = request.Country,
-                    PostCode = request.PostCode
-                },
+                Address = request.AddressLine,
+                City = request.City,
+                PostCode = request.PostCode,
                 Mail = request.Mail,
                 CardHolder = request.CardHolder,
                 CreditCard = request.CreditCard,
                 Cvv = request.Cvv,
                 DateTime = request.DateTime
             };
-
+            _dbContext.Customers.Add(newCustomer);
+            _dbContext.SaveChanges();
             return newCustomer;
         }
     }
