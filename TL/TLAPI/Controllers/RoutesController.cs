@@ -97,7 +97,7 @@ namespace TelstarLogistics.Controllers
         [HttpPost]
         public Order PlaceOrder(MakeAnOrderRequest request)
         {
-            return _routesService.SaveOrder(request); ;
+            return _routesService.SaveOrder(request);
         }
 
         [Route("getCities")]

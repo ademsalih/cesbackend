@@ -7,7 +7,6 @@ namespace TLAPI.Models
     public class MakeAnOrderRequest
     {
         public int CustomerId { get; set; }
-        public int RouteSegmentId { get; set; }
         public int EmployeeId { get; set; }
         public string CityFrom { get; set; }
         public string CityTo { get; set; }
