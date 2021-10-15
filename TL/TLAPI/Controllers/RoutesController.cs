@@ -26,7 +26,6 @@ namespace TelstarLogistics.Controllers
         {
             TelstarLogisticsContext dbContext = new TelstarLogisticsContext();
             _routesService = new RoutesService(dbContext);
-
         }
 
         [Route("createEmployee")]
@@ -41,40 +40,53 @@ namespace TelstarLogistics.Controllers
             }
         }
 
-        [Route("findRoutes")]
-        public FindRouteResponse Route(FindRouteRequest request)
-        {
-            return new FindRouteResponse
-            {
-                Cost = 45.2,
-                Time =11.3,
-                CityTo = request.CityTo,
-                CityFrom = request.CityFrom
-            };
-        }
+        //[Route("findRoutes")]
+        //public FindRouteResponse Route(FindRouteRequest request)
+        //{
+        //    return new FindRouteResponse
+        //    {
+        //        Cost = 45.2,
+        //        Time =11.3,
+        //        CityTo = request.CityTo,
+        //        CityFrom = request.CityFrom
+        //    };
+        //}
 
-        [Route("findCheapestRoute")]
-        public FindRouteResponse CheapestRoute(FindRouteRequest request)
-        {
-            return new FindRouteResponse
-            {
-                Cost = 20.2,
-                Time = 15.3,
-                CityTo = request.CityTo,
-                CityFrom = request.CityFrom
-            };
-        }
+        //[Route("findCheapestRoute")]
+        //public FindRouteResponse CheapestRoute(FindRouteRequest request)
+        //{
+        //    return new FindRouteResponse
+        //    {
+        //        Cost = 20.2,
+        //        Time = 15.3,
+        //        CityTo = request.CityTo,
+        //        CityFrom = request.CityFrom
+        //    };
+        //}
 
         [Route("findShortestRoute")]
         public FindRouteResponse ShortestRoute(FindRouteRequest request)
         {
-            PathFinder pf = new PathFinder();
-            int distance = pf.GetDistance(pf.MapNameToId(request.CityFrom), pf.MapNameToId(request.CityTo));
-
+            int distance = 0;
+            try
+            {
+               PathFinder pf = new PathFinder();
+               distance = pf.GetDistance(pf.MapNameToId(request.CityFrom), pf.MapNameToId(request.CityTo));
+            }
+            catch(Exception ex)
+            {
+                return new FindRouteResponse
+                {
+                    Cost = 0,
+                    Time = 0,
+                    CityTo = request.CityTo,
+                    CityFrom = request.CityFrom
+                };
+            }
 
             return new FindRouteResponse
             {
-                Cost = 45.2,
+                Cost = distance*3,
                 Time = distance*4,
                 CityTo = request.CityTo,
                 CityFrom = request.CityFrom
@@ -85,7 +97,6 @@ namespace TelstarLogistics.Controllers
         [HttpPost]
         public Order PlaceOrder(MakeAnOrderRequest request)
         {
-
             return _routesService.SaveOrder(request); ;
         }
 
@@ -96,12 +107,5 @@ namespace TelstarLogistics.Controllers
             return cities;
         }
 
-        //[Route("getCities")]
-        //public FindRouteResponse GetAirRoute()
-        //{
-        //    var response = externalSystemsService.getAirRoutes();
-
-        //    return response;
-        //}
     }
 }
