@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202110141902509_citiesAdded.designer.cs">
       <DependentUpon>202110141902509_citiesAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110142258283_idfix.cs" />
+    <Compile Include="Migrations\202110142258283_idfix.designer.cs">
+      <DependentUpon>202110142258283_idfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelstarLogisticsContext.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110141902509_citiesAdded.resx">
       <DependentUpon>202110141902509_citiesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110142258283_idfix.resx">
+      <DependentUpon>202110142258283_idfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

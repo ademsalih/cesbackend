@@ -67,6 +67,7 @@ namespace TelstarLogistics.Controllers
         [Route("findShortestRoute")]
         public FindRouteResponse ShortestRoute(FindRouteRequest request)
         {
+            PathFinder pf = new PathFinder();
             return new FindRouteResponse
             {
                 Cost = 45.2,
@@ -87,7 +88,6 @@ namespace TelstarLogistics.Controllers
         public List<City> GetCities()
         {
             var cities = _routesService.GetCities();
-
             return cities;
         }
 

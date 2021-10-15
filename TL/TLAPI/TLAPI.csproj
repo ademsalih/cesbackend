@@ -252,6 +252,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Services\distances.csv" />
+    <Content Include="Services\citiesTranslation.csv" />
+    <Content Include="Services\cityConnections v3.csv" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

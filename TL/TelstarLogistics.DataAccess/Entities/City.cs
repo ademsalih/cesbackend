@@ -7,7 +7,7 @@ namespace TelstarLogistics.DataAccess.Classes
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int PersonId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string DisplayName { get; set; }
     }

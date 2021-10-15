@@ -24,5 +24,28 @@ namespace TLAPI.Services
             return cities;
             
         }
+
+        public void PopulateCities(string cities)
+        {
+
+          var eachCityAndId = cities.Split(';');
+
+          foreach (var cityAndid in eachCityAndId)
+          {
+
+              var abd = cityAndid.Split(',');
+              _dbContext.Cities.Add(new City()
+              {
+                  DisplayName = abd[0],
+                  Id = Int32.Parse(abd[1]),
+                  Name = abd[0]
+              });
+              _dbContext.SaveChanges();
+          }
+
+
+        }
+
+        
     }
 }
